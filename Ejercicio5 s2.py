@@ -10,6 +10,10 @@ def adivina_el_numero ():
     while intentos > 0 :
         try:
             intento = int(input(f"\nTienes {intentos} intentos restantes ¿Ya sabes que numero es?:"))
+
+            if intento < 1 or intento > 10:
+                print("Por favor, ingresa un número entre 1 y 10.")
+                continue
             if intento == numero_aleatorio:
                 print("¡Felicidades has adivindo el numero!")
                 break
@@ -20,7 +24,7 @@ def adivina_el_numero ():
             intentos -= 1
 
             if intentos == 0:
-                print("No te quedan intentos, perdiste.")
+                print(f"No te quedan intentos, perdiste. El numero era {numero_aleatorio}")
         except ValueError:
             print("Por favor, ingresa un numero entero valido")
 
