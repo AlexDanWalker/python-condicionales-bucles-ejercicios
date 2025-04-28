@@ -27,5 +27,11 @@ def adivina_el_numero ():
                 print(f"No te quedan intentos, perdiste. El numero era {numero_aleatorio}")
         except ValueError:
             print("Por favor, ingresa un numero entero valido")
+        
 
+    repetir = input("\n¿Deseas jugar otra vez? (s/n): ").lower()
+    if repetir == 's':
+        adivina_el_numero()
+    else:
+        print("Programa finalizado.")
 adivina_el_numero ()
